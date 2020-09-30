@@ -1,0 +1,86 @@
+<div class="content details-page position-relative pb-4">
+    <div class="container">
+        <div class="row mt-5">   
+
+            <div class="col-12 col-lg-3">
+                
+                <div class="poster">
+                    <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                </div>
+                <div class="trailer text-center pt-3 pb-4 mb-4">
+                    <a href="{{ movie.trailer.link }}" target="_blank" rel="noopener noreferrer" class="btn btn-danger btn-trailer"> Wacth Trailer </a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8 offset-lg-1">
+                <div class="title">
+                    <h2> {{ movie.title }} </h2>
+                </div>
+
+                <!-- <div class="ratings d-flex px-4 py-3 mt-3" *ngFor="let rating of ratings">
+                    <p class="mb-0 mr-3"> {{ rating.name }}</p>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-1"(click)="selectStars(star, rating.name)" [ngClass]="{'selected': (star <= selectedValue)}">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div> -->
+
+                <div class="ratings d-flex px-4 py-3 mt-3">
+                    <p class="mb-0 mr-3"> Movie script </p>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-1" *ngFor="let star of stars" (click)="selectStars(star, 'Roteiro', movie.title)" [ngClass]="{'selected': (star <= selectedRoteiro)}">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div class="ratings d-flex px-4 py-3 mt-3">
+                    <p class="mb-0 mr-3"> Photography </p>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-1" *ngFor="let star of stars" (click)="selectStars(star, 'Fotografia', movie.title)" [ngClass]="{'selected': (star <= selectedFotografia)}">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div class="ratings d-flex px-4 py-3 mt-3">
+                    <p class="mb-0 mr-3"> Special effects </p>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-1" *ngFor="let star of stars" (click)="selectStars(star, 'Efeitos', movie.title)" [ngClass]="{'selected': (star <= selectedEfeitos)}">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div> 
+
+                <div class="ratings d-flex px-4 py-3 mt-3 mb-4">
+                    <p class="mb-0 mr-3"> Cast </p>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-1" *ngFor="let star of stars" (click)="selectStars(star, 'Elenco', movie.title)" [ngClass]="{'selected': (star <= selectedElenco)}">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </li>
+                    </ul>
+                </div> 
+
+                <mat-tab-group>
+                    <mat-tab label="OVERVIEW"> 
+                        <div class="description py-3">
+                            <p> {{ movie.plot }} </p>    
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Technical information"> 
+                        <div class="informations py-3">
+                            <p>Durantion: {{ movie.length }}</p> 
+                            <p>Year: {{ movie.year }}</p>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Cast">
+                        <div class="cast d-flex py-3">
+                            <p class="mx-1" *ngFor="let actor of movie.cast"> {{ actor.actor }}, </p>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+                
+            </div>
+        </div>
+    </div>
+</div>

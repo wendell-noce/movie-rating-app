@@ -1,0 +1,86 @@
+.details-page {
+    .poster {
+        img {
+            width: 100%;
+            height: 445px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            outline: none;
+        }
+    }
+    
+    .trailer {
+        background-color: #07101a;
+        border: 3px solid #0c1c2c;
+        border-top: 0 none; 
+    }
+
+    .title {
+        h2 {
+            font-family: 'Dosis', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+        }
+    }
+
+    .informations{
+        p{
+            font-family: 'Dosis', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .ratings {
+        border-top: 1px solid #405266;
+        border-bottom: 1px solid #405266;
+        align-items: center;
+
+        p {
+            font-family: 'Dosis', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #abb7c4;
+            min-width: 84px;
+
+            @media ( min-width: 992px ) {
+                font-size: 18px;    
+                min-width: 104px;
+            }
+        }
+
+        ul {
+            li{
+                cursor: pointer;
+                i{
+                    font-size: 21px;
+                    @media ( min-width: 992px ) {
+                        font-size: 30px;
+                    }
+                }
+
+                &:hover,
+                &.selected {
+                    color: #ffd700;
+                }
+            }
+        }
+    }
+
+    .mat-tab-group {
+        .mat-tab-label-content {
+            font-family: 'Dosis', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffd700;
+        }
+
+        .mat-tab-header-pagination-chevron{
+            border-color: #fff;
+        }
+
+        .cast {
+            flex-wrap: wrap;
+        }
+    } 
+}   

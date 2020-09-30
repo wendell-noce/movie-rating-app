@@ -1,0 +1,42 @@
+<!-- content -->
+<div class="content home-page">
+	<div class="container">
+		<div class="row justify-content-center align-items-center">
+			<div class="col-12 col-md-6 col-lg-7 text-center">
+				<div class="box-header" [ngClass]="{'active': isFilter}">
+					<h1 class="title text-white"> Movie Rating App </h1>
+
+					<div class="input-box mt-4">
+						<input type="text" class="w-100 text-center mb-2" placeholder="Serach for movie" (keyup)="listarFilme($event.target.value)" >
+					</div>
+				</div>
+			</div>
+		</div>	
+		<div class="loading" *ngIf="loading">
+			<i class="fa fa-spinner"></i>
+		</div>
+
+		<div class="buscaVazia text-center" *ngIf="emptyValue">
+			<h2 class="title"> Enter the movie name </h2>
+		</div>
+
+		<div class="row align-items-stretch" *ngIf="isFilter">
+			<div class="col-12 col-md-4 col-lg-3 mb-4" *ngFor="let movie of movies">
+				<div class="card position-relative">
+					<a routerLink="/movie/{{ movie.id }}">
+						<div class="card-image">
+							<img src="{{ movie.image }}" alt="{{ movie.title }}">
+						</div>
+						<h2 class="card-title"> {{ movie.title }} </h2>
+						<div class="card-hover">
+							<span class="btn btn-primary"> Read more </span>
+						</div>
+					</a>
+				</div>   
+			</div>
+		</div>
+	</div>
+
+	
+	
+</div>
